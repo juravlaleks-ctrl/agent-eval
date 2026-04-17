@@ -1,0 +1,8 @@
+{
+  "name": "Sample Fixture",
+  "a": 20,
+  "b": 22,
+  "featured_employee": "Ada Lovelace",
+  "status": "active",
+  "tags": ["alpha", "beta", "gamma"]
+}

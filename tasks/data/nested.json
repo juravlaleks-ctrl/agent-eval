@@ -1,0 +1,29 @@
+{
+  "teams": [
+    {
+      "name": "team-a",
+      "users": [
+        {
+          "name": "Ada Lovelace",
+          "email": "ada@corp.test",
+          "skills": ["analysis", "research"]
+        },
+        {
+          "name": "Bea Stone",
+          "email": "bea@corp.test",
+          "skills": ["ops"]
+        }
+      ]
+    },
+    {
+      "name": "team-b",
+      "users": [
+        {
+          "name": "Grace Hopper",
+          "email": "grace@corp.test",
+          "skills": ["platform", "compilers"]
+        }
+      ]
+    }
+  ]
+}

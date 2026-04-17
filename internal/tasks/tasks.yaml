@@ -1,0 +1,552 @@
+# Task corpus for agent-eval.
+# 54 tasks = 6 categories × 3 difficulty levels × 3 tasks each.
+# Sources: see DATASETS.md for attribution and licenses.
+# DO NOT hand-edit without updating the expected hash (see scripts/hash-answer.sh if needed).
+tasks:
+  - id: T001
+    category: arithmetic
+    difficulty: 1
+    prompt: "A babysitter earns $12 per hour and works 50 minutes. How much does she earn?"
+    source: "GSM8K#train:1"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+  - id: T002
+    category: arithmetic
+    difficulty: 1
+    prompt: "Four houses have 3 gnomes each, and there are 20 gnomes total. How many gnomes are in the fifth house?"
+    source: "GSM8K#train:39"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+  - id: T003
+    category: arithmetic
+    difficulty: 1
+    prompt: "Mina memorized 24 digits of pi, which is 6 times Carlos. Sam memorized 6 more digits than Carlos. How many digits did Sam memorize?"
+    source: "GSM8K#train:66"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "4a44dc15364204a80fe80e9039455cc1608281820fe2b24f1e5233ade6af1dd5"
+  - id: T004
+    category: arithmetic
+    difficulty: 2
+    prompt: "Natalia sold 48 clips in April and half as many in May. How many clips did she sell in total?"
+    source: "GSM8K#train:0"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "8722616204217eddb39e7df969e0698aed8e599ba62ed2de1ce49b03ade0fede"
+  - id: T005
+    category: arithmetic
+    difficulty: 2
+    prompt: "Ann spent $75 on 5 shorts at $7 each and 2 shoes at $10 each, then bought 4 tops at the same price. How much was each top?"
+    source: "GSM8K#train:30"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+  - id: T006
+    category: arithmetic
+    difficulty: 2
+    prompt: "Mary has a $100 credit limit and has already paid back $15 on Tuesday and $23 on Thursday. How much remains to be paid?"
+    source: "GSM8K#train:32"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "81b8a03f97e8787c53fe1a86bda042b6f0de9b0ec9c09357e107c99ba4d6948a"
+  - id: T007
+    category: arithmetic
+    difficulty: 3
+    prompt: "Betty needed $100 for a wallet, had half of it, got $15 from her parents, and her grandparents gave twice as much as the parents. How much more does she need?"
+    source: "GSM8K#train:2"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+  - id: T008
+    category: arithmetic
+    difficulty: 3
+    prompt: "A truck has 26 pink, 15 green, and 24 yellow hard hats. Carl removes 4 pink hats, then John removes 6 pink hats and twice as many green hats as pink hats. How many hats remain?"
+    source: "GSM8K#train:21"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "44cb730c420480a0477b505ae68af508fb90f96cf0ec54c6ad16949dd427f13a"
+  - id: T009
+    category: arithmetic
+    difficulty: 3
+    prompt: "Mrs. Snyder spent 40% of her salary on rent and utilities before a $600 raise. After the raise, the same costs were 25% of her salary. What was her salary before the raise?"
+    source: "GSM8K#train:40"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "40510175845988f13f6162ed8526f0b09f73384467fa855e1e79b44a56562a58"
+
+  - id: T010
+    category: code
+    difficulty: 1
+    prompt: "HumanEval/2 defines truncate_number(number) as the fractional part of a positive float. What is truncate_number(123.456)? Answer with the decimal number only."
+    source: "HumanEval#2"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "7cd12e0af9ebd672f4541c1d23438eac6fd5b0935dcb8ecb51bb412cd1bc7745"
+  - id: T011
+    category: code
+    difficulty: 1
+    prompt: "HumanEval/3 asks whether a running balance ever goes below zero. What is below_zero([1, 2, -4, 5])? Answer true or false."
+    source: "HumanEval#3"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+  - id: T012
+    category: code
+    difficulty: 1
+    prompt: "Write a Python lambda that returns truthy iff the input integer is even."
+    source: "custom"
+    license: "custom"
+    check:
+      type: lambda_python
+      positive: ["2", "8", "10"]
+      negative: ["1", "5", "9"]
+  - id: T013
+    category: code
+    difficulty: 2
+    prompt: "HumanEval/0 asks whether any two numbers are closer than threshold. What is has_close_elements([1.0, 2.0, 3.9, 4.0, 5.0, 2.2], 0.3)? Answer true or false."
+    source: "HumanEval#0"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+  - id: T014
+    category: code
+    difficulty: 2
+    prompt: "HumanEval/1 splits balanced parenthesis groups. For '( ) (( )) (( )( ))', return the groups joined by commas with no spaces."
+    source: "HumanEval#1"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "8d174c65cc6dc32e5e5ecb4f96760225fb67f4b6edeb6b4204adfab50facab3a"
+  - id: T015
+    category: code
+    difficulty: 2
+    prompt: "HumanEval/9 rolling_max([1, 3, 2, 5, 4]) should produce a list. Return the list as comma-separated integers with no spaces."
+    source: "HumanEval#9"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "d385e13145ac1028cc7f268a66db9abf0a7d7023b1ad9dc645e9a396d00d235f"
+  - id: T016
+    category: code
+    difficulty: 3
+    prompt: "HumanEval/17 parse_music('o o| .| o') returns beat counts. Return them as comma-separated integers with no spaces."
+    source: "HumanEval#17"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "69a825a386f767ad93d9feeaa67bc7dad7a16ddc836b3e241a40625d7e364038"
+  - id: T017
+    category: code
+    difficulty: 3
+    prompt: "HumanEval/59 largest_prime_factor(13195) returns what integer?"
+    source: "HumanEval#59"
+    license: "MIT"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "35135aaa6cc23891b40cb3f378c53a17a1127210ce60e125ccf03efcfdaec458"
+  - id: T018
+    category: code
+    difficulty: 3
+    prompt: "Write a Python lambda that returns truthy iff the input integer is divisible by both 3 and 5."
+    source: "custom"
+    license: "custom"
+    check:
+      type: lambda_python
+      positive: ["15", "30", "45"]
+      negative: ["3", "10", "18"]
+
+  - id: T019
+    category: instruction
+    difficulty: 1
+    prompt: "Output exactly 'violet lantern' in lowercase and nothing else."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "3ae421cad9254ea5e004ddf1475e88bbf84aa7cb4f36ea3de48fa8b94e030e7d"
+  - id: T020
+    category: instruction
+    difficulty: 1
+    prompt: "Output the single word 'tomorrow' with no punctuation."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "bafd151a86f9a573b153e76e3a8a0053b3340ce304a301a5354288fb18bce848"
+  - id: T021
+    category: instruction
+    difficulty: 1
+    prompt: "Output the ISO date '2026-04-17' and nothing else."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "f67645a45830bafd3a4cc33c98cf5e4d8394f93f2094fd76781877a10886ec73"
+  - id: T022
+    category: instruction
+    difficulty: 2
+    prompt: "Output exactly three words: silver, river, signal, separated by single spaces, with no punctuation."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "79db6ab6bde217c2d693df42fd2a972b92e61ed6b91ed2c4f0125be4963922b8"
+  - id: T023
+    category: instruction
+    difficulty: 2
+    prompt: "Output exactly one sentence with 6 words. It must start with 'Anchor' and end with 'now'. Do not use punctuation."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "9903e749fe98893a364117d2782298bda6bc1fbb046a98ef509bd3b01d8e6f93"
+  - id: T024
+    category: instruction
+    difficulty: 2
+    prompt: "Write a regex that matches exactly one uppercase ASCII letter followed by two digits."
+    source: "custom"
+    license: "custom"
+    check:
+      type: regex_functional
+      positive: ["A12", "Z99"]
+      negative: ["a12", "AB1", "123", ""]
+  - id: T025
+    category: instruction
+    difficulty: 3
+    prompt: "Output exactly one sentence of 9 words. The first, fourth, and seventh words must be red, blue, and green, in that order. Do not use punctuation."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "83c019b46d5b9096672d24695084ce91e968b7ec47f4138a8f804addaf86e13c"
+  - id: T026
+    category: instruction
+    difficulty: 3
+    prompt: "Output a single line with exactly 8 words. The first word must be begin, the second delta, the fifth omega, and the last end. Do not use punctuation."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "f2dffc1baf4e9eaad086166145bdd0c123891833cd3bacf8df73f462c9b87b71"
+  - id: T027
+    category: instruction
+    difficulty: 3
+    prompt: "Write one lowercase sentence with exactly 6 words. It must mention one of north or northern, one of south or southern, and one of bridge or bridges. Do not use punctuation."
+    source: "custom"
+    license: "custom"
+    check:
+      type: keywords
+      groups:
+        - ["north", "northern"]
+        - ["south", "southern"]
+        - ["bridge", "bridges"]
+
+  - id: T028
+    category: logic
+    difficulty: 1
+    prompt: "Shelf order of 3 books: black, orange, blue. Constraints: black < orange < blue. Which option matches slot 1? A black first B orange first C blue first"
+    source: "BIG-bench/logical_deduction_three_objects#ex01"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+  - id: T029
+    category: logic
+    difficulty: 1
+    prompt: "Shelf order of 3 books: black, orange, blue. Constraints: black < orange < blue. Which option matches slot 2? A black second B orange second C blue second"
+    source: "BIG-bench/logical_deduction_three_objects#ex02"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
+  - id: T030
+    category: logic
+    difficulty: 1
+    prompt: "Shelf order of 3 books: black, orange, blue. Constraints: black < orange < blue. Which option matches slot 3? A black third B orange third C blue third"
+    source: "BIG-bench/logical_deduction_three_objects#ex03"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "2e7d2c03a9507ae265ecf5b5356885a53393a2029d241394997265a1a25aefc6"
+  - id: T031
+    category: logic
+    difficulty: 2
+    prompt: "Shelf order of 5 books: gray, red, purple, blue, black. Constraints: gray < red; black < blue; blue < gray; purple = slot 4. Which option matches slot 1? A gray first B red first C purple first D blue first E black first"
+    source: "BIG-bench/logical_deduction_five_objects#ex01"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "3f79bb7b435b05321651daefd374cdc681dc06faa65e374e38337b88ca046dea"
+  - id: T032
+    category: logic
+    difficulty: 2
+    prompt: "Shelf order of 5 books: gray, red, purple, blue, black. Constraints: gray < red; black < blue; blue < gray; purple = slot 4. Which option matches slot 2? A gray second B red second C purple second D blue second E black second"
+    source: "BIG-bench/logical_deduction_five_objects#ex02"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "18ac3e7343f016890c510e93f935261169d9e3f565436429830faf0934f4f8e4"
+  - id: T033
+    category: logic
+    difficulty: 2
+    prompt: "Shelf order of 5 books: gray, red, purple, blue, black. Constraints: gray < red; black < blue; blue < gray; purple = slot 4. Which option matches slot 3? A gray third B red third C purple third D blue third E black third"
+    source: "BIG-bench/logical_deduction_five_objects#ex03"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+  - id: T034
+    category: logic
+    difficulty: 3
+    prompt: "Shelf order of 7 books: black, yellow, white, gray, purple, orange, green. Constraints: green < gray; gray = slot 5; white = slot 7; orange = slot 2; yellow < black; black = slot 3. Which option matches slot 1? A black first B yellow first C white first D gray first E purple first F orange first G green first"
+    source: "BIG-bench/logical_deduction_seven_objects#ex01"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d"
+  - id: T035
+    category: logic
+    difficulty: 3
+    prompt: "Shelf order of 7 books: black, yellow, white, gray, purple, orange, green. Constraints: green < gray; gray = slot 5; white = slot 7; orange = slot 2; yellow < black; black = slot 3. Which option matches slot 2? A black second B yellow second C white second D gray second E purple second F orange second G green second"
+    source: "BIG-bench/logical_deduction_seven_objects#ex02"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "252f10c83610ebca1a059c0bae8255eba2f95be4d1d7bcfa89d7248a82d9f111"
+  - id: T036
+    category: logic
+    difficulty: 3
+    prompt: "Shelf order of 7 books: black, yellow, white, gray, purple, orange, green. Constraints: green < gray; gray = slot 5; white = slot 7; orange = slot 2; yellow < black; black = slot 3. Which option matches slot 3? A black third B yellow third C white third D gray third E purple third F orange third G green third"
+    source: "BIG-bench/logical_deduction_seven_objects#ex03"
+    license: "Apache-2.0"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb"
+
+  - id: T037
+    category: multi_step
+    difficulty: 1
+    prompt: "Compute 9 + 6 - 4."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "4fc82b26aecb47d2868c4efbe3581732a3e7cbcc6c2efb32062c08170a05eeb8"
+  - id: T038
+    category: multi_step
+    difficulty: 1
+    prompt: "Compute 8 * 2 - 5."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "4fc82b26aecb47d2868c4efbe3581732a3e7cbcc6c2efb32062c08170a05eeb8"
+  - id: T039
+    category: multi_step
+    difficulty: 1
+    prompt: "Three boxes are labeled 1, 2, and 3. Ball A starts in box 1, ball B in box 2, and ball C in box 3. Swap boxes 1 and 3, then swap boxes 2 and 3. Which box has ball A at the end?"
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+  - id: T040
+    category: multi_step
+    difficulty: 2
+    prompt: "Compute 18 - 7 + 6 - 3."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "8527a891e224136950ff32ca212b45bc93f69fbb801c3b1ebedac52775f99e61"
+  - id: T041
+    category: multi_step
+    difficulty: 2
+    prompt: "Five boxes are labeled 1 through 5. Token A starts in box 1, B in box 2, C in box 3, D in box 4, and E in box 5. Swap boxes 1 and 2, then 2 and 5, then 1 and 4, then 3 and 5, then 2 and 3. Where is token A at the end?"
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35"
+  - id: T042
+    category: multi_step
+    difficulty: 2
+    prompt: "Compute (12 - 5) * 2 + 1."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "e629fa6598d732768f7c726b4b621285f9c3b85303900aa912017db7617d8bdb"
+  - id: T043
+    category: multi_step
+    difficulty: 3
+    prompt: "Compute ((50 - 20) / 5) + 6 * 4 - 3."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "670671cd97404156226e507973f2ab8330d3022ca96e0c93bdbdb320c41adcaf"
+  - id: T044
+    category: multi_step
+    difficulty: 3
+    prompt: "Seven boxes are labeled 1 through 7. Token A starts in box 1, B in box 2, C in box 3, D in box 4, E in box 5, F in box 6, and G in box 7. Swap boxes 1 and 7, then 2 and 6, then 3 and 5, then 1 and 4, then 2 and 7, then 4 and 5, then 1 and 6. Which box has token G at the end?"
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "ef2d127de37b942baad06145e54b0c619a1f22327b2ebbcfbec78f5564afe39d"
+  - id: T045
+    category: multi_step
+    difficulty: 3
+    prompt: "Compute ((30 - 6) / 3) * (5 - 1) + 2."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "86e50149658661312a9e0b35558d84f6c6d3da797f552a9657fe0558ca40cdef"
+
+  - id: T046
+    category: tool_use
+    difficulty: 1
+    prompt: "Read tasks/data/lines.txt and return the third non-empty line exactly."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67"
+  - id: T047
+    category: tool_use
+    difficulty: 1
+    prompt: "From tasks/data/sample.json, return the value of the top-level field name."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "dba70d030060ae5e444ac2142823e75128903efd13d6039a91b2bf5c9b3c665b"
+  - id: T048
+    category: tool_use
+    difficulty: 1
+    prompt: "Count how many non-empty lines are in tasks/data/lines.txt."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+  - id: T049
+    category: tool_use
+    difficulty: 2
+    prompt: "In tasks/data/sample.json, add the integer fields a and b. Return only the sum."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "73475cb40a568e8da8a045ced110137e159f890ac4da883b6b17dc651b3a8049"
+  - id: T050
+    category: tool_use
+    difficulty: 2
+    prompt: "From tasks/data/employees.csv, return the department of Ada Lovelace."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "66f62d1807d3821a3865f2573b69c74be033f1341240ac861fefc6d430bff5e0"
+  - id: T051
+    category: tool_use
+    difficulty: 2
+    prompt: "From tasks/data/log.txt, return the number of lines containing the word ERROR."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "e7f6c011776e8db7cd330b54174fd76f7d0216b612387a5ffcfb81e6f0919683"
+  - id: T052
+    category: tool_use
+    difficulty: 3
+    prompt: "From tasks/data/nested.json, return the email address of the second user in the first team."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "37e6ab7e7607e2de99f6a82a90d012ab03ab42bf53bf7ed1fb736cd8f5f79438"
+  - id: T053
+    category: tool_use
+    difficulty: 3
+    prompt: "Using tasks/data/employees.csv and tasks/data/log.txt, return the name of the employee whose employee_id appears most often in the log file."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "177f85df57ad121d5aaac8076a4a0554a673182fe06cf65ee7d9f7d0961f947d"
+  - id: T054
+    category: tool_use
+    difficulty: 3
+    prompt: "Using tasks/data/sample.json, tasks/data/nested.json, and tasks/data/employees.csv, return the department of the person named in sample.json under featured_employee."
+    source: "custom"
+    license: "custom"
+    check:
+      type: hash
+      normalize: lower_trim
+      expected: "66f62d1807d3821a3865f2573b69c74be033f1341240ac861fefc6d430bff5e0"

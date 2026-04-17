@@ -1,0 +1,20 @@
+# Binaries
+/agent-eval
+/agent-eval.exe
+
+# SQLite database (runtime state)
+agent-eval.db
+agent-eval.db-journal
+agent-eval.db-shm
+agent-eval.db-wal
+
+# Go build artifacts
+*.test
+*.out
+coverage.*
+
+# Runtime output
+runs/
+
+# OS
+.DS_Store

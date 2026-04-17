@@ -1,0 +1,16 @@
+id,name,role,salary,department
+1,Ada Lovelace,Research Engineer,185000,Research
+2,Grace Hopper,Principal Engineer,210000,Platform
+3,Alan Turing,Security Researcher,198000,Research
+4,Barbara Liskov,Architect,205000,Platform
+5,Katherine Johnson,Analyst,176000,Operations
+6,Donald Knuth,Scientist,220000,Research
+7,Margaret Hamilton,Director,230000,Engineering
+8,Edsger Dijkstra,Staff Engineer,202000,Engineering
+9,Radia Perlman,Network Engineer,194000,Infrastructure
+10,Frances Allen,Compiler Engineer,191000,Engineering
+11,Claude Shannon,Scientist,214000,Research
+12,Linus Torvalds,Distinguished Engineer,225000,Engineering
+13,Hedy Lamarr,Product Strategist,182000,Product
+14,Annie Easley,Data Engineer,188000,Data
+15,Mary Jackson,Program Manager,179000,Operations

@@ -1,0 +1,24 @@
+#!/bin/sh
+set -eu
+
+current_branch="$(git symbolic-ref --quiet --short HEAD 2>/dev/null || true)"
+allowed_branch="main"
+allowed_ref="refs/heads/$allowed_branch"
+
+while read -r local_ref local_oid remote_ref remote_oid; do
+  [ -n "${local_ref:-}" ] || continue
+
+  if [ "$local_ref" != "$allowed_ref" ] || [ "$remote_ref" != "$allowed_ref" ]; then
+    echo "push blocked: only '$allowed_branch' may be pushed from this repository." >&2
+    echo "attempted: $local_ref -> $remote_ref" >&2
+    exit 1
+  fi
+
+  if [ "$current_branch" != "$allowed_branch" ]; then
+    echo "push blocked: current branch is '$current_branch', but only '$allowed_branch' may push." >&2
+    echo "switch to '$allowed_branch' before pushing." >&2
+    exit 1
+  fi
+done
+
+exit 0
