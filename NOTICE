@@ -1,0 +1,24 @@
+Apache License 2.0
+Copyright 2026 The agent-eval Contributors
+
+This product includes open-source software and is distributed under the Apache License, Version 2.0.
+
+Attribution policy:
+- Redistributions and derivatives must keep this NOTICE file.
+- Third-party license notices from dependencies are retained in dependency-referenced materials.
+- Commercial use is permitted under the Apache-2.0 terms.
+
+Repository references for third-party obligations:
+- Go module declarations: go.mod
+- Go dependencies: go.sum
+- Source license files and notices should be reviewed before redistribution of bundled binaries.
+- Task corpus attribution summary:
+  - GSM8K-derived arithmetic tasks — MIT
+  - BIG-bench-inspired logic and multi-step task families — Apache-2.0 reference lineage
+  - HumanEval-derived code tasks — MIT
+  - IFEval-inspired instruction task families — Apache-2.0 reference lineage
+  - Additional deterministic custom tasks authored for `agent-eval`
+- Detailed corpus curation notes may be maintained in Russian development-branch documentation under `docs/DATASETS.md`.
+
+This file intentionally acts as the repository-level notice holder for operator-facing
+redistributions and derivative works.
